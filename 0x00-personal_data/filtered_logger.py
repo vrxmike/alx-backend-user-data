@@ -58,7 +58,7 @@ def get_logger() -> logging.Logger:
     """
     Return a logging.Logger object
     """
-    logger = logging.getlogger("user_data")
+    logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
     logger.propagate = False
 
