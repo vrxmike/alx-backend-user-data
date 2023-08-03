@@ -22,13 +22,13 @@ def filter_datum(fields: List[str], redaction: str,
         message (str): the log line to obfuscate
         separator (str): the character separating the fields
     """
-    for fields in fields:
+    for field in fields:
         message = re.sub(field+'=.*?'+separator,
                          field+'='+redaction+separator, message)
         return message
 
 
-class RedactingFormatter(logging.formatter):
+class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
         """
 
@@ -101,5 +101,5 @@ def main():
     db.close()
 
 
-if __name__ == "__main--':
+if __name__ == "__main__":
     main()
